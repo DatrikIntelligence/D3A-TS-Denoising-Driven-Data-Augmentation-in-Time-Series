@@ -1,0 +1,9 @@
+Keras==2.2.4
+livelossplot==0.5.0
+matplotlib==3.2.1
+numpy==1.19.5
+ray==2.4.0
+ruptures==1.1.7
+tensorflow==2.2.0
+tqdm==4.64.1
+tsfresh==0.10.0
