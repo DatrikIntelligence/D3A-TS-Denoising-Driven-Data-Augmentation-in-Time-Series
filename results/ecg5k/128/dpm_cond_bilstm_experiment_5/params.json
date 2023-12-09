@@ -1,0 +1,61 @@
+{
+  "model": "bilstm",
+  "learning_rate": 0.0001,
+  "task_type": "classification",  
+    "ts_len": 128,
+    "name": "ecg5k",
+    "package": "data.ecg5k",
+    "generator": "ECG5KSequence",
+    "save_memory": false,
+    "net_config": {
+      "net": {
+        "output": "softmax",
+        "nblocks": 2,
+        "rnn_units": 32,
+        "bidirectional": true,
+        "l1": 0,
+        "l2": 0,
+        "dropout": 0.3,
+        "output_dim": 5,
+        "batch_normalization": false,
+        "patience": 15  
+      },
+      "noise_rates": ["2.00",
+           "2.42",
+           "2.84",
+           "3.26",
+           "3.68",
+           "4.11",
+           "4.53",
+           "4.95",
+           "5.37",
+           "5.79",
+           "6.21",
+           "6.63",
+           "7.05",
+           "7.47",
+           "7.89",
+           "8.32",
+           "8.74",
+           "9.16",
+           "9.58",
+           "10.00"]
+
+    },
+    "diffusion_net": {
+      "num_epochs": 100,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "timesteps": 20,
+      "max_noise_level": 10,  
+      "cond": true,
+      "feature_loss": false,
+      "class": "dpm"
+    },
+    "s2a_net": {
+      "lr": 0.001,
+      "activation": "relu",
+      "output": "linear"
+    }
+ 
+}
